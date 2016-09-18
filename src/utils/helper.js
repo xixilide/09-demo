@@ -1,13 +1,14 @@
 import axios from 'axios';
 
-function searchGit(){
-  return axios.get('https://api.github.com/users/xixilide')
+function getJson(){
+  let address=`https://raw.githubusercontent.com/xixilide/demoData/master/demo.json?${Math.random()}`;
+  return axios.get(address)
     .then((res) => ({
 
-      data:res.data
+      getJson:res.data
     }))
     .catch(function (error) {
       alert(error);
     })
 }
-export { searchGit };
+export { getJson };
