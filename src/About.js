@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import axios from 'axios';
+import { searchGit } from './utils/helper'
 
 class About extends React.Component {
   constructor(){
@@ -10,17 +10,12 @@ class About extends React.Component {
     }
   }
   componentDidMount(){
-    axios.get('https://api.github.com/users/newming')
-      .then((res) => {
-        // console.log(res.data);
-        this.setState({
-          data:res.data,
-          wait:false
-        })
-      })
-      .catch(function (error) {
-        alert(error);
-      });
+// console.log( searchGit );
+searchGit()
+    .then((data) => {
+
+      console.log(data);
+    })
   }
   render () {
     return(
