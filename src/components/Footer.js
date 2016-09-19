@@ -5,6 +5,7 @@ class Footer extends React.Component {
     return(
       <div>
         <h1 className="text-center">我是页面的footer</h1>
+          
       </div>
     )
   }

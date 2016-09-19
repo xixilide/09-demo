@@ -1,4 +1,15 @@
 import axios from 'axios';
+function searchGit(add){
+    let address = `https://api.github.com/users/&{add}`;
+    return axios.get(address)
+    .then((res) => (
+      {getData:res.data}
+    ))
+    .catch(function (error) {
+      alert(error);
+    });
+}
+
 
 function getJson(){
   let address=`https://raw.githubusercontent.com/xixilide/demoData/master/demo.json?${Math.random()}`;
@@ -11,4 +22,17 @@ function getJson(){
       alert(error);
     })
 }
-export { getJson };
+
+
+function getMd(add){
+  let address=`https://raw.githubusercontent.com/xixilide/demoData/master/blog/${add}.md`;
+  return axios.get(address)
+    .then((res) => ({
+
+      getMd:res.data
+    }))
+    .catch(function (error) {
+      alert(error);
+    })
+}
+export { searchGit,getJson,getMd };

@@ -16,6 +16,7 @@ class NavBar extends React.Component {
             <Link to="/about"  activeStyle={{backgroundColor:'#FF4081',color:'#fff'}}>About</Link>
           </li>
         </ul>
+        
       </div>
     )
   }
